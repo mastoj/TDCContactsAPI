@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using TDCContactsAPI.Controllers;
+using TDCContactsAPI.Filters;
 using TDCContactsAPI.Handlers;
+using TDCContactsAPI.IoC;
 
 namespace TDCContactsAPI
 {
@@ -16,7 +19,10 @@ namespace TDCContactsAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            config.Formatters.Add(new JpgMediaFormatter());
             config.MessageHandlers.Add(new CorsHandler());
+            config.Filters.Add(new ValidationActionFilter());
+            config.DependencyResolver = new MyResolver();
         }
     }
 }

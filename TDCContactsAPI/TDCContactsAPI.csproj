@@ -126,6 +126,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Providers\CustomFileNameStreamProvider.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Formatters\JpgMediaFormatter.cs" />
+    <Compile Include="IoC\MyResolver.cs" />
+    <Compile Include="TDCApiConfiguration.cs" />
     <Compile Include="Filters\ValidationActionFilter.cs" />
     <Compile Include="Handlers\CorsHandler.cs" />
     <Compile Include="Controllers\HomeController.cs" />
