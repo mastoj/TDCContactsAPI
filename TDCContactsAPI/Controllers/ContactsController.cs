@@ -4,30 +4,31 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TDCContactsAPI.Models;
 
 namespace TDCContactsAPI.Controllers
 {
-    public class ValuesController : ApiController
+    public class ContactsController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<Contact> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new[] { Contact.CreateContact(1, firstName: "John"), Contact.CreateContact(2, firstName: "Tomas") };
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public Contact Get(int id)
         {
-            return "value";
+            return Contact.CreateContact(1, firstName: "John");
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Contact value)
         {
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Contact value)
         {
         }
 
