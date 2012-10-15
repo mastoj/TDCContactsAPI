@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 using TDCContactsAPI.Filters;
+using TDCContactsAPI.Formatters;
 using TDCContactsAPI.Handlers;
 
 namespace TDCContactsAPI
@@ -18,6 +16,7 @@ namespace TDCContactsAPI
             );
 
             config.MessageHandlers.Add(new CorsHandler());
+            config.Formatters.Add(new JpgMediaFormatter());
             config.Filters.Add(new ValidationActionFilter());
         }
     }
