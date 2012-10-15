@@ -11,9 +11,9 @@ namespace TDCContactsAPI.Controllers
     {
         private ContactRepository _contactsRepository;
 
-        public ContactsController(ContactRepository contactRepository)
+        public ContactsController()
         {
-            _contactsRepository = contactRepository;
+            _contactsRepository = new ContactRepository();
         }
 
         // GET api/values        
