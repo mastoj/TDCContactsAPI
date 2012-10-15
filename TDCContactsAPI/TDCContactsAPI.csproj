@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C126E757-6657-40E6-8F88-16B1192E19B3}</ProjectGuid>
+    <ProjectGuid>{A55BE2A0-29AC-4EC2-B2FF-1138C1D3E15C}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,9 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataAnnotationsExtensions">
-      <HintPath>..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -125,21 +122,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ContactsController.cs" />
-    <Compile Include="Providers\CustomFileNameStreamProvider.cs" />
-    <Compile Include="Controllers\ImageController.cs" />
-    <Compile Include="Formatters\JpgMediaFormatter.cs" />
-    <Compile Include="IoC\MyResolver.cs" />
-    <Compile Include="TDCApiConfiguration.cs" />
-    <Compile Include="Filters\ValidationActionFilter.cs" />
-    <Compile Include="Handlers\CorsHandler.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\ContactRepository.cs" />
+    <Compile Include="Handlers\CorsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +188,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Images\contacts\alexander_rybak.jpg" />
+    <Content Include="Images\contacts\bruce_lee.jpg" />
+    <Content Include="Images\contacts\chuck_norris.jpg" />
+    <Content Include="Images\contacts\darth_vader.jpg" />
+    <Content Include="Images\contacts\george_bush.jpg" />
+    <Content Include="Images\contacts\Me.jpg" />
+    <Content Include="Images\contacts\Round_me.jpg" />
+    <Content Include="Images\contacts\Round_me.png" />
+    <Content Include="Images\contacts\tomas_jansson.jpg" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -244,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
