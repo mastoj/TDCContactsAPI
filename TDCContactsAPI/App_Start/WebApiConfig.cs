@@ -2,6 +2,7 @@
 using TDCContactsAPI.Filters;
 using TDCContactsAPI.Formatters;
 using TDCContactsAPI.Handlers;
+using TDCContactsAPI.IoC;
 
 namespace TDCContactsAPI
 {
@@ -18,6 +19,7 @@ namespace TDCContactsAPI
             config.MessageHandlers.Add(new CorsHandler());
             config.Formatters.Add(new JpgMediaFormatter());
             config.Filters.Add(new ValidationActionFilter());
+            config.DependencyResolver = new MyResolver();
         }
     }
 }
