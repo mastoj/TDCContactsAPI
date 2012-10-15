@@ -16,10 +16,11 @@ namespace TDCContactsAPI.Controllers
             _contactsRepository = contactsRepository;
         }
 
-        // GET api/values        
-        public IEnumerable<Contact> Get()
+        // GET api/values
+        [Queryable]
+        public IQueryable<Contact> Get()
         {
-            return _contactsRepository.Get();
+            return _contactsRepository.Get().AsQueryable();
         }
 
         // GET api/values/5        
