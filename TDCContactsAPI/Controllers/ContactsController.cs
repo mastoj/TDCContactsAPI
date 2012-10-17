@@ -23,9 +23,14 @@ namespace TDCContactsAPI.Controllers
         }
 
         // GET api/values/5        
-        public Contact Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return _contactsRepository.Get().SingleOrDefault(y => y.Id == id);
+            var contact = _contactsRepository.Get().SingleOrDefault(y => y.Id == id);
+            if(contact == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No contact for id " + id);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, contact);
         }
 
         // POST api/values        
