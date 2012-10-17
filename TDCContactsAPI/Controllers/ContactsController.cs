@@ -11,9 +11,9 @@ namespace TDCContactsAPI.Controllers
     {
         private ContactRepository _contactsRepository;
 
-        public ContactsController(ContactRepository contactRepository)
+        public ContactsController()
         {
-            _contactsRepository = contactRepository;
+            _contactsRepository = new ContactRepository();
         }
 
         // GET api/values        
@@ -23,9 +23,14 @@ namespace TDCContactsAPI.Controllers
         }
 
         // GET api/values/5        
-        public Contact Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return _contactsRepository.Get().SingleOrDefault(y => y.Id == id);
+            var contact = _contactsRepository.Get().SingleOrDefault(y => y.Id == id);
+            if(contact == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No contact for id " + id);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, contact);
         }
 
         // POST api/values        
